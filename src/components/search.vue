@@ -23,9 +23,7 @@
 		methods:{
 			get:function(ev){
 				var that = this;
-				if( ev.keyCode == 38 || ev.keyCode == 40 ){
-					return 
-				}
+				if( ev.keyCode == 38 || ev.keyCode == 40 ) return;
 //				console.dir( jsonp );
 				jsonp('https://sug.so.360.cn/suggest?word=' + this.keyWord + '&encodein=utf-8&encodeout=utf-8',{},function(res,data) {
 					that.myData = data.s;
