@@ -1,9 +1,9 @@
 <template>
 	<div id="box">
-		<input autofocus class="searchInp" type="text" v-model="keyWord" @keyup="get($event)" @keydown.down="down" @keydown.up="up"/>
+		<input ref="inp" autofocus @blur="getFocus" class="searchInp" type="text" v-model="keyWord" @keyup="get($event)" @keydown.down="down" @keydown.up="up"/>
 		<div class="searchContent">
 			<transition-group name="itemfade" tag="ul" mode="out-in" v-cloak>
-				<li v-for="(v,i) in myData" :key="v" :class="[activeIndex==i?'active':'',hoverIndex==i?'hover':'']" @mouseover="over(i)" @mouseout="out" @click="sel(v,i)">{{v}}</li>
+				<li v-for="(v,i) in myData" :key="v" :class="{active:activeIndex==i,hover:hoverIndex==i}" @mouseover="over(i)" @mouseout="out" @click="sel(v,i)">{{v}}</li>
 			</transition-group>
 		</div>
 	</div>
@@ -29,6 +29,10 @@
 					that.myData = data.s;
 //					console.log( that.myData );
            		});
+			},
+			getFocus:function(){
+				console.log( 1 )
+				this.$refs.inp.focus();
 			},
 			over:function(a){
 				this.hoverIndex = a;
