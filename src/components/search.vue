@@ -89,10 +89,6 @@
 		height: 40px;
 		font: 20px/2 "微软雅黑";
 	}
-	
-	/*li{
-		
-	}*/
 	#box{
 		overflow: hidden;
 	}
@@ -113,8 +109,11 @@
 	.searchContent li{
 		transition: 0.4s;
 		text-align: left;
+		width: 500px;
+		height: 40px;
 		margin-bottom: 10px;
 		background-color: pink;
+		
 	}
 	
 	.searchContent .active{
@@ -125,20 +124,19 @@
 		background-color: yellowgreen;
 		color: #fff;
 	}
-	.v-enter{
-		transform: scale(2);
-		
+	
+	.itemfade-move{
+		transition: .5s;		
 	}
 	
 	.itemfade-enter,.itemfade-leave-active {
 	    opacity: 0;
-	    transition: .4s .4s;
+	    transition: 1s;
+	    position: absolute;
 	}
 	
 	.itemfade-leave-active {
 	    transform: scaleY(0);
-	    height:0px
-	    
 	}
 	
 	#keyWordReset{
