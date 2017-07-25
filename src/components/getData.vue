@@ -1,10 +1,13 @@
 <template>
 	<div id="box">
-		<input type="button" value="获取数据" @click="getData"/>
+		<input class="getdata" type="button" value="获取数据" @click="getData"/>
 		<ul id="list">
 			<li v-for="(item,i) in myData">
 				<img :src="item.images.large"/>
-				<span>{{item.title}}</span>
+				<a :href="item.alt">{{item.title}}</a>
+				<div>
+					<a :href="v.alt" class="cast" v-for="(v,index) in item.casts">{{v.name}}</a>
+				</div>
 			</li>
 		</ul>
 	</div>
@@ -26,7 +29,6 @@
 				});
 			}
 		}
-		
 	}
 </script>
 <style>
@@ -38,7 +40,7 @@
 		list-style: none;
 	}
 	#list{
-		font: 14px/ 50px "微软雅黑";
+		font: 14px/ 20px "微软雅黑";
 	}
 	#list li{
 		width: 25%;
@@ -58,5 +60,8 @@
 		/*display: block;*/
 		/*text-align: center;*/
 	}
-	
+	#list .cast{
+		display: inline-block;
+		margin: 0px 2px;
+	}
 </style>
