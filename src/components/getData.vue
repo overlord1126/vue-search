@@ -41,6 +41,19 @@
 	li{
 		list-style: none;
 	}
+	.getdata{
+		font: 20px/2 "微软雅黑";
+		color: #fff;
+		width: 100px;
+		height: 40px;
+		background: yellowgreen;
+		border-radius: 10px;
+		border: none;
+		outline: none;
+	}
+	.getdata:active{
+		background-color: greenyellow;
+	}
 	#list{
 		font: 14px/ 20px "微软雅黑";
 	}
